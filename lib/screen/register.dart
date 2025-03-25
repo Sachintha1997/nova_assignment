@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:mind_engineering/screen/home.dart';
 import 'package:mind_engineering/screen/loging_screen.dart';
+import 'package:mind_engineering/screen/side_manu.dart';
 import 'package:mind_engineering/screen/ui_helper/colors.dart';
 import 'package:mind_engineering/screen/ui_helper/font.dart';
 
@@ -23,16 +25,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       backgroundColor: Colors.white,
       appBar: AppBar(
-        leading: IconButton(
-          iconSize: 32,
-          icon: Image.asset('assets/images/ic_menu.png', width: 32, height: 32), 
-          onPressed: () {},
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
+  leading: Builder(
+    builder: (context) => IconButton(
+      iconSize: 32,
+      icon: Image.asset('assets/images/ic_menu.png', width: 32, height: 32),
+      onPressed: () {
+        Scaffold.of(context).openDrawer(); // Open the drawer
+      },
+    ),
+  ),
+  backgroundColor: Colors.white,
+  elevation: 0,
+),
+drawer: const AppDrawer(
+  isLoggedIn: false, // or true if user is logged in
+),
+
       body: SingleChildScrollView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         child: Padding(
@@ -93,11 +104,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
                       ),
                       onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text("Registration Successful!")),
-                          );
-                        }
+                        // if (_formKey.currentState!.validate()) {
+                        //   ScaffoldMessenger.of(context).showSnackBar(
+                        //     const SnackBar(content: Text("Registration Successful!")),
+                        //   );
+                        // }
+                        Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen ()),
+                );
                       },
                       child: const Text("Register", style: TextStyle(fontSize: 18, color: Colors.white)),
                     ),
