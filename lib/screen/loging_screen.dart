@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor:  CustomColors.white,
 
       //
       drawer: const AppDrawer(
@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
 
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor:CustomColors.white,
         elevation: 0,
         leading: Builder(
           builder: (context) => IconButton(
@@ -117,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               MaterialPageRoute(builder: (context) => const HomeScreen()),
                             );
                           },
-                          child: const Text("Login", style: TextStyle(fontFamily: Customfont.lato, fontSize: 16, color: Colors.white)),
+                          child: const Text("Login", style: TextStyle(fontFamily: Customfont.lato, fontSize: 16, color: CustomColors.white)),
                         ),
                       ),
 
@@ -191,13 +191,13 @@ class _LoginScreenState extends State<LoginScreen> {
             hintStyle: const TextStyle(
               fontFamily: "lato",
               fontSize: 16,
-              color: Colors.grey,
+              color: CustomColors.hitegry,
             ),
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
             errorStyle: const TextStyle(
               fontFamily: "lato",
               fontSize: 14,
-              color: Colors.red,
+              color: CustomColors.errrred,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -242,13 +242,13 @@ class _LoginScreenState extends State<LoginScreen> {
             hintStyle: const TextStyle(
               fontFamily: "lato",
               fontSize: 16,
-              color: Colors.grey,
+              color: CustomColors.hitegry,
             ),
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
             errorStyle: const TextStyle(
               fontFamily: "lato",
               fontSize: 14,
-              color: Colors.red,
+              color: CustomColors.errrred,
               fontWeight: FontWeight.bold,
             ),
             suffixIcon: GestureDetector(

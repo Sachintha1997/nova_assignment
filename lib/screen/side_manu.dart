@@ -21,13 +21,13 @@ class AppDrawer extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Logo at the top
+            
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Image.asset("assets/images/home_logo.png", height: 40),
             ),
 
-            // User info (only if logged in)
+            
             if (isLoggedIn && userName != null && userEmail != null)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -41,7 +41,7 @@ class AppDrawer extends StatelessWidget {
                     const SizedBox(height: 4),
                     Text(
                       userEmail!,
-                      style: const TextStyle(fontSize: 14, color: Colors.grey),
+                      style: const TextStyle(fontFamily: Customfont.lato,fontSize: 14, color: CustomColors.manygry),
                     ),
                   ],
                 ),

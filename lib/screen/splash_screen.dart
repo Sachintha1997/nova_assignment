@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:mind_engineering/screen/loging_page.dart';
+import 'package:mind_engineering/screen/ui_helper/colors.dart';
+import 'package:mind_engineering/screen/ui_helper/font.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -45,16 +47,18 @@ class _SplashScreenState extends State<SplashScreen> {
                   Text(
                     'Powered By',
                     style: TextStyle(
+                      fontFamily: Customfont.lato,
                       fontSize: 12,
-                      color: Colors.blue[600],
+                      color: CustomColors.neutralblue,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   const Text(
                     'Nova Solutions',
                     style: TextStyle(
+                      fontFamily:Customfont.libre,
                       fontSize: 20,
-                      color: Colors.black,
+                      color: CustomColors.darkblue,
                       fontWeight: FontWeight.w600,
                     ),
                   ),

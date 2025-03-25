@@ -14,7 +14,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       
       drawer: const AppDrawer(
-        isLoggedIn: false, // false for login screen
+        isLoggedIn: false, 
       ),
       appBar: AppBar(
         leading: Builder(
@@ -38,11 +38,11 @@ class LoginPage extends StatelessWidget {
           const SizedBox(height: 12),
           const Text(
             "Welcome to Mind Engineers",
-            style: TextStyle(fontFamily: "Libre", fontSize: 24, fontWeight: FontWeight.bold),
+            style: TextStyle(fontFamily: "Libre", fontSize: 24, fontWeight: FontWeight.bold,color: CustomColors.darkblue),
           ),
           Text(
             "Your personal guide to happiness",
-            style: TextStyle(fontFamily: "lato", fontSize: 16, color: Colors.grey),
+            style: TextStyle(fontFamily: "lato", fontSize: 16, color: CustomColors.welcomgry),
           ),
           const Spacer(),
           SizedBox(
@@ -62,7 +62,7 @@ class LoginPage extends StatelessWidget {
                 },
                 child: const Text(
                   'Login',
-                  style: TextStyle(fontFamily: "lato", fontSize: 16, color: Colors.white),
+                  style: TextStyle(fontFamily: "lato", fontSize: 16, color: CustomColors.white),
                 ),
               ),
             ),
@@ -71,7 +71,7 @@ class LoginPage extends StatelessWidget {
           Text.rich(
             TextSpan(
               text: "Don’t have an account?",
-              style: const TextStyle(fontFamily: "lato", fontSize: 16, color: Colors.black),
+              style: const TextStyle(fontFamily: "lato", fontSize: 16, color: CustomColors.darkblue),
               children: [
                 TextSpan(
                   text: "  Sign Up",

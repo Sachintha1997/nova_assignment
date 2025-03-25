@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
             iconSize: 32,
             icon: Image.asset('assets/images/ic_menu.png', width: 32, height: 32),
             onPressed: () {
-              Scaffold.of(context).openDrawer(); // ✅ This opens the drawer
+              Scaffold.of(context).openDrawer(); 
             },
           ),
         ),
@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              color: const Color(0xFFDFF6F4),
+              color: CustomColors.backblue,
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,9 +82,9 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
 
-            // White Section
+            
             Container(
-              color: Colors.white,
+              color: CustomColors.white,
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,7 +121,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  // Quick Access
   Widget _buildQuickAccessButton(String label, String assetPath) {
     return Column(
       children: [
@@ -131,7 +130,7 @@ class HomeScreen extends StatelessWidget {
             color:CustomColors.bordblue,
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Image.asset(assetPath, width: 32, height: 32, color: Colors.white),
+          child: Image.asset(assetPath, width: 32, height: 32, color: CustomColors.white),
         ),
         const SizedBox(height: 5),
         Text(label, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600)),
@@ -139,7 +138,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  // Status Cards
+  
   Widget _buildStatusCard(String title, double percent, Color color) {
     return Expanded(
       child: Container(
@@ -153,15 +152,15 @@ class HomeScreen extends StatelessWidget {
           children: [
             Text(
               title,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color:  CustomColors.white),
             ),
             CircularPercentIndicator(
               radius: 22.0,
               lineWidth: 5.0,
               percent: percent,
-              center: Text("${(percent * 100).toInt()}%", style: const TextStyle(color: Colors.white)),
+              center: Text("${(percent * 100).toInt()}%", style: const TextStyle(color:  CustomColors.white)),
               progressColor: color,
-              backgroundColor: Colors.white,
+              backgroundColor:  CustomColors.white,
               circularStrokeCap: CircularStrokeCap.round,
             ),
           ],
@@ -170,7 +169,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  // ----------- Meditation Cards (Redesigned) ------------------
+  
 
   Widget _mindMandalaCard() {
    
@@ -201,7 +200,7 @@ class HomeScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color:  CustomColors.white,
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: const Text(
@@ -245,14 +244,14 @@ class HomeScreen extends StatelessWidget {
                   fontFamily: Customfont.lato,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color:  CustomColors.white,
                 ),
               ),
               const SizedBox(height: 8),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFB2DFDB),
+                  color:  CustomColors.white,
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: const Text(
@@ -292,14 +291,14 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color:  CustomColors.white,
                 ),
               ),
               const SizedBox(height: 8),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: CustomColors.white,
                   borderRadius: BorderRadius.circular(6),
                 ),
                 child: const Text(
@@ -320,24 +319,22 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  // ----------- End Meditation Cards ------------------
 
-  // Library Card
+  
   Widget _buildLibraryCard(String image) {
     return Container(
       width: 140,
       margin: const EdgeInsets.only(right: 12),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFFF0F0F0),
+        color: CustomColors.white,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Image.asset(image, height: 100),
     );
   }
 
-  // Progress Card
- // Progress Card with background image
+ 
 Widget _buildProgressCard() {
   return Container(
     width: double.infinity,
@@ -345,8 +342,7 @@ Widget _buildProgressCard() {
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(12),
       image: const DecorationImage(
-        image: AssetImage("assets/images/progress.png"), // Make sure this path matches your asset
-        fit: BoxFit.cover,
+        image: AssetImage("assets/images/progress.png"), 
       ),
     ),
     padding: const EdgeInsets.all(16),
@@ -359,7 +355,7 @@ Widget _buildProgressCard() {
             "Progress",
             style: TextStyle(
               fontFamily: Customfont.lato,
-              color: Colors.white,
+              color:  CustomColors.white,
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
@@ -371,13 +367,13 @@ Widget _buildProgressCard() {
           child: Text(
             "View More",
             style: TextStyle(
-              color: Colors.white,
+              color: CustomColors.white,
               fontSize: 14,
               decoration: TextDecoration.underline,
             ),
           ),
         ),
-        // Optional: Add chart or decoration here
+        
       ],
     ),
   );

@@ -26,22 +26,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       
-      backgroundColor: Colors.white,
+      backgroundColor: CustomColors.white,
       appBar: AppBar(
   leading: Builder(
     builder: (context) => IconButton(
       iconSize: 32,
       icon: Image.asset('assets/images/ic_menu.png', width: 32, height: 32),
       onPressed: () {
-        Scaffold.of(context).openDrawer(); // Open the drawer
+        Scaffold.of(context).openDrawer(); 
       },
     ),
   ),
-  backgroundColor: Colors.white,
+  backgroundColor: CustomColors.white,
   elevation: 0,
 ),
 drawer: const AppDrawer(
-  isLoggedIn: false, // or true if user is logged in
+  isLoggedIn: false, 
 ),
 
       body: SingleChildScrollView(
@@ -104,17 +104,13 @@ drawer: const AppDrawer(
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
                       ),
                       onPressed: () {
-                        // if (_formKey.currentState!.validate()) {
-                        //   ScaffoldMessenger.of(context).showSnackBar(
-                        //     const SnackBar(content: Text("Registration Successful!")),
-                        //   );
-                        // }
+                       
                         Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => HomeScreen ()),
                 );
                       },
-                      child: const Text("Register", style: TextStyle(fontSize: 18, color: Colors.white)),
+                      child: const Text("Register", style: TextStyle(fontSize: 18, color: CustomColors.white)),
                     ),
                   ),
                 ),
@@ -125,7 +121,7 @@ drawer: const AppDrawer(
                   child: Text.rich(
                     TextSpan(
                       text: "Don’t have an account?",
-                      style: const TextStyle(fontFamily: "lato", fontSize: 16, color: Colors.black),
+                      style: const TextStyle(fontFamily: "lato", fontSize: 16, color: CustomColors.darkblue),
                       children: [
                         TextSpan(
                           text: "  Sign In",
